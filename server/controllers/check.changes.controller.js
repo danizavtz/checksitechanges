@@ -4,15 +4,14 @@ let legacyHashValue = null, currentHashValue = null;
 
 exports.checkSiteChanges = (req, res, next) => {
     request('http://www.google.com.br', (error, response, body) => {
-        if (!error) {
-            let hash = crypto.createHash('sha256');
-            hash.update(body);
-            currentHashValue = hash.digest('hex');
-            next();
-        } else {
+        if (error) {
             res.status(400).json({ errors: [{ msg: error }] });
-            res.end();
-        };
+            res.end();            
+        } 
+        let hash = crypto.createHash('sha256');
+        hash.update(body);
+        currentHashValue = hash.digest('hex');
+        next();
     });
 };
 
