@@ -1,0 +1,34 @@
+{
+  "name": "checksitechanges",
+  "version": "1.0.0",
+  "description": "check websites changes via requests",
+  "main": "app.js",
+  "scripts": {
+    "start": "set NODE_ENV=production && node ./bin/www",
+    "serve": "nodemon ./bin/www",
+    "test": "mocha --exit --reporter spec test/",
+    "coverage": "nyc mocha --exit --reporter progress ./test/"
+  },
+  "keywords": [
+    "node",
+    "request"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.11",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.0.0",
+    "supertest": "^4.0.2"
+  }
+}
